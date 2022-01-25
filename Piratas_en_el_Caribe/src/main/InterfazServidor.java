@@ -11,6 +11,5 @@ import java.rmi.*;
  * @author angel
  */
 public interface InterfazServidor extends Remote{
-    public void recibe(Agente h)
-    throws java.rmi.RemoteException;
+    public void recibe(Agente h) throws RemoteException;
 }
