@@ -15,9 +15,8 @@ import java.rmi.registry.LocateRegistry;
  * @author angel
  */
 public class Cliente {
-    static int puertoRMI=12345;
+    static int puertoRMI=1022;
     public static void main(String args[]){
-        System.setSecurityManager(new RMISecurityManager());
         try{
             Registry registro = LocateRegistry.getRegistry("localhost",puertoRMI);
             InterfazServidor h = (InterfazServidor)registro.lookup("servidor1");
@@ -29,10 +28,10 @@ public class Cliente {
             listaNodos.addElement("servidor3");
             Agente a = new Agente("007",listaNodos,puertoRMI);
             h.recibe(a);
-            System.out.println("***Buentrabajo,007");
+            System.out.println("***Buen trabajo,007");
         }
         catch(Exception e){
-            System.out.println("Excepciónenmain:"+e);
+            System.out.println("Excepción en main :"+e);
         }
     }//finmain
 }

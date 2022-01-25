@@ -18,7 +18,7 @@ public class Agente implements InterfazAgente{
     int indiceNodo; //cuál es el siguiente ordenador a visitar
     String nombre;
     Vector listaNodos; //el itinerario
-    int puertoRMI = 12345;
+    int puertoRMI = 1022;
     
     public Agente(String miNombre, Vector laListaComputadoras, int elPuertoRMI) {
         nombre = miNombre;
@@ -60,16 +60,16 @@ public class Agente implements InterfazAgente{
         }
     }
             
-        //El método dormir suspende la ejecución de este objeto
-        //un número determinado de segundos.
-        static void dormir (double time){
-            try{
-                Thread.sleep((long)(time*1000.0));
-            }
-            catch(InterruptedException e){
-                System.out.println("excepción en dormir");
-            }
-        }//findormir
+    //El método dormir suspende la ejecución de este objeto
+    //un número determinado de segundos.
+    static void dormir (double time){
+        try{
+            Thread.sleep((long)(time*1000.0));
+        }
+        catch(InterruptedException e){
+            System.out.println("excepción en dormir");
+        }
+    }//findormir
 }
         
 
