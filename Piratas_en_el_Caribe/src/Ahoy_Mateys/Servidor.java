@@ -1,3 +1,5 @@
+package Ahoy_Mateys;
+
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.Registry;

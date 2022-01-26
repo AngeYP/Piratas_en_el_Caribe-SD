@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Ruta>
+<Barco>
+  <Tripulacion>200</Tripulacion>
+  <Cofre>1500</Cofre> <!--  Capacidad de dinero para robar (Libras)-->
+  <Municiones>1000</Municiones>
+  <Raciones>400</Raciones>
+  <Mapa>
+    <Servidor id="1">
+      <Isla>Isla Nueva Esperanzas</Isla> <!--Obligatorio-->
+      <Puerto>Cala de los Mártires</Puerto> <!--Puede ser nulo-->
+    </Servidor>
+    <Servidor id="2">
+      <Isla>Isla El Naufrago</Isla>
+      <Puerto>Cueva del bucanero</Puerto>
+    </Servidor>
+    <Servidor id="3">
+      <Isla>Cayo de Barlovento</Isla>
+      <Puerto></Puerto>
+    </Servidor>
+  </Mapa>
+</Barco>
   
 
 

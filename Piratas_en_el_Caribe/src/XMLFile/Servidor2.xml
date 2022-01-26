@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <maquina>
-  <ubicacion id="Isla_la_Holandesa">
-    <puerto puerto="Puerto_de_la_reina">
+  <ubicacion id="Isla la Holandesa">
+    <puerto puerto="Puerto de la Reina">
       <mapas>100</mapas>
       <barras_de_oro>200</barras_de_oro>
       <barras_de_plata>300</barras_de_plata>
@@ -11,7 +11,7 @@
       <cofres_de_piedras_preciosas>700</cofres_de_piedras_preciosas>
       <el_corazon_de_la_princesa>800</el_corazon_de_la_princesa>
     </puerto>
-    <puerto puerto="Bahia_del_buen_reposo">
+    <puerto puerto="Bahia del buen Reposo">
       <mapas>100</mapas>
       <barras_de_oro>100</barras_de_oro>
       <barras_de_plata>100</barras_de_plata>
@@ -21,7 +21,7 @@
       <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
       <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
     </puerto>
-    <puerto puerto="Cueva_de_los_marineros">
+    <puerto puerto="Cueva de los Marineros">
       <mapas>100</mapas>
       <barras_de_oro>100</barras_de_oro>
       <barras_de_plata>100</barras_de_plata>
@@ -32,8 +32,8 @@
       <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
     </puerto>
   </ubicacion>
-  <ubicacion id="Isla_el_Naufrago">
-    <puerto puerto="Bahia_de_la_esperanza">
+  <ubicacion id="Isla el Naufrago">
+    <puerto puerto="Bahia de la Esperanza">
       <mapas>100</mapas>
       <barras_de_oro>100</barras_de_oro>
       <barras_de_plata>100</barras_de_plata>
@@ -43,7 +43,7 @@
       <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
       <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
     </puerto>
-    <puerto puerto="Cueva_del_bucanero">
+    <puerto puerto="Cueva del Bucanero">
       <mapas>100</mapas>
       <barras_de_oro>100</barras_de_oro>
       <barras_de_plata>100</barras_de_plata>

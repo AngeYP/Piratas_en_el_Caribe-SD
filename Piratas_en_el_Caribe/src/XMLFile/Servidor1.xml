@@ -1,54 +1,59 @@
-<?xml version="1.0"?>
-<programas>
-  <programa id="1001">
-    <mapas>100</mapas>
-    <barras_de_oro>100</barras_de_oro>
-    <barras_de_plata>100</barras_de_plata>
-    <bolsas_de_perlas>100</bolsas_de_perlas>
-    <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
-    <cofres_de_joyas>100</cofres_de_joyas>
-    <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
-    <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
-  </programa>
-
-<!--Los posibles tesoros son: 
-Mapas (5 libras), 
-Barras de Oro (25 libras), 
-Barras de Plata (50 libras), 
-Bolsas de Perlas (10 libras), 
-Bolsas de Monedas de Oros (15 libras), 
-Cofres de Joya (15 libras), 
-Cofres de piedras preciosas (10 libras), 
-(todos los anteriores del mismo valor)
-El Corazón de la Princesa (5 libras)-->
-
-<!--Máquina 1
-  Isla Nueva Esperanzas
-    Puerto Real
-    Cala de los Mártires
-    Playa de las perlas
-  Cayo del buen viento
-  Cayo de sotavento
-Máquina 2
-  Isla La Holandesa
-    Puerto de la Reina
-    Bahía del Buen Reposo
-    Cueva de los marineros
-  Isla El Naufrago
-    Bahía de la esperanza
-    Cueva del bucanero
-Máquina 3
-  Isla Tortuga
-    Cueva de los huesos
-    Bahía del buen retiro
-  Isla Las Aves
-    Bahía de las flores
-    Cementerio de Barcos
-  Cayo de Barlovento
-Máquina 4
-  La Gran Isla de la Española
-    Puerto Rico
-    Puerto de las Ballenas
-    Bahía del tesoro perdido
-    Cueva del pirata
-  Cayo de los Pelicanos-->
+<?xml version="1.0" encoding="UTF-8"?>
+<maquina>
+  <ubicacion id="Isla Nueva Esperanzas">
+    <puerto puerto="Puerto Real">
+      <mapas>100</mapas>
+      <barras_de_oro>200</barras_de_oro>
+      <barras_de_plata>300</barras_de_plata>
+      <bolsas_de_perlas>400</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>500</bolsas_moneda_de_oro>
+      <cofres_de_joyas>600</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>700</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>800</el_corazon_de_la_princesa>
+    </puerto>
+    <puerto puerto="Cala de los Mártires">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+    <puerto puerto="Playa de las perlas">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+  <ubicacion id="Cayo del buen viento">
+    <puerto puerto="">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+  <ubicacion id="Cayo de sotavento">
+    <puerto puerto="">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+</maquina>

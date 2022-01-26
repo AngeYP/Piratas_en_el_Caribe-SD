@@ -1,3 +1,5 @@
+package Ahoy_Mateys;
+
 import java.rmi.*;
 
 public interface InterfazServidor extends Remote{
