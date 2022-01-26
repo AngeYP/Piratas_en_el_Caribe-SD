@@ -6,6 +6,7 @@
 package piratas;
 
 import java.util.Random;
+import java.util.Scanner;
 /**
  *
  * @author DELL
@@ -53,9 +54,14 @@ public class Barco {
     
     public String getTripulacion(){
         int tripulantes_vivo = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Deseas ver el estado de tu tripulacion? (y/n)");
+        char opcion = sc.next().charAt(0);
+        
         for(int i = 0; i < tripulacion.length; i++){
-            //System.out.println("Tripulante: "+tripulacion[i].getNumero_tripulante()+
-            //                  "Estado: "+tripulacion[i].getEstado());
+            if (opcion == 'y')
+                System.out.println("Tripulante: "+tripulacion[i].getNumero_tripulante()+
+                                  " Estado: "+tripulacion[i].getEstado());
             if(tripulacion[i].getEstado() != "Muerto")
                 tripulantes_vivo++;
         }
