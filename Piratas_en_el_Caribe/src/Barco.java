@@ -29,6 +29,17 @@ public class Barco {
             this.tripulacion[i] = new Tripulante(i);
         }
     }
+
+    public void AtaqueATripulacion(int tripulantes_caidos) {
+        Random random = new Random();
+        while(tripulantes_caidos > 0){
+            int numero_tripulante  = random.nextInt(tripulacion.length);
+            if (tripulacion[numero_tripulante].getEstado() != "Muerto"){
+                tripulacion[numero_tripulante].setEstado("Muerto");
+                tripulantes_caidos --;
+            }                       
+        }
+    }
     
     
     public void eventoTripulante(){

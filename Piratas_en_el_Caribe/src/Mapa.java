@@ -12,10 +12,11 @@ package piratas;
 public class Mapa {
     
     public Isla isla[];
+    public Calamidad calamidad;
     
     public Mapa(int Cantidad_isla){
         isla = new Isla[Cantidad_isla];
-        
+        calamidad = new Calamidad("Leviatan",20);
         for (int i = 1; i < Cantidad_isla;i++){
             isla[i] = new Isla ("Isla " + i);
         }

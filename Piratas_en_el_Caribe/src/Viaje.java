@@ -38,9 +38,12 @@ public class Viaje {
                if (opcion == 'y')
                    Holandesa.cofre.AgregarTesoro(mapa.isla[numero_isla].TomarTesoros());
            }
-           System.out.println(Holandesa.getCofreCapacidad());
+           mapa.calamidad.Aparicion(Holandesa);
            System.out.println("Resumen.....");
+           System.out.println(Holandesa.getCofreCapacidad());
            System.out.println(Holandesa.getTripulacion());
+           System.out.println(Holandesa.getMunicion());
+           
            sleep(5000);
          
          
