@@ -13,12 +13,14 @@ import java.util.Scanner;
  * @author DELL
  */
 public class Isla {
-    String nombre;
-    ArrayList<String> entrada = new ArrayList<String>();
+    public String nombre;
+    public ArrayList<String> entrada = new ArrayList<String>();
+    public Cofre cofre;
     
     public Isla(String nombre){
         this.nombre = nombre;
-
+        this.cofre = new Cofre(50);
+        setCofreIsla();
     }
 
     public String getNombre() {
@@ -41,7 +43,19 @@ public class Isla {
                 System.out.println("Navegando hacia "+entrada.get(opcion-1));
             
         }
-
     }
     
+    public void setCofreIsla(){
+        Tesoro treasure = new Tesoro(nombre,10,30);
+        cofre.AgregarTesoro(treasure);
+    }
+    
+    public void getTesorosIsla(){
+        System.out.println("Tesoros encontrados: ");
+        cofre.getTesoros();
+    }
+    
+    public Tesoro TomarTesoros(){
+        return cofre.EliminarTesoro();
+    }
 }

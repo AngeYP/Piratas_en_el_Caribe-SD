@@ -11,7 +11,7 @@ package piratas;
  */
 public class Mapa {
     
-    Isla isla[];
+    public Isla isla[];
     
     public Mapa(int Cantidad_isla){
         isla = new Isla[Cantidad_isla];
@@ -19,6 +19,7 @@ public class Mapa {
         for (int i = 1; i < Cantidad_isla;i++){
             isla[i] = new Isla ("Isla " + i);
         }
+        CrearIslaEntrada();
        // System.out.println(isla[1]);
     }
     

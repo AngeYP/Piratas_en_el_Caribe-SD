@@ -13,14 +13,14 @@ import java.util.Scanner;
  */
 public class Barco {
     
-    public int Cofre;
+    public Cofre cofre;
     public Tripulante tripulacion [];
     public int raciones;
     public int municion;
     
     
     public Barco(int tripulacion, int raciones, int municion){
-        this.Cofre= 50;
+        this.cofre= new Cofre(50);
         this.raciones = raciones;
         this.municion = municion;
         this.tripulacion = new Tripulante[tripulacion];
@@ -69,9 +69,6 @@ public class Barco {
         return respuesta;
     }
 
-    public void setCofre(int Cofre) {
-        this.Cofre = Cofre;
-    }
 
     public void setRaciones(int raciones) {
         this.raciones = raciones;
@@ -82,11 +79,12 @@ public class Barco {
     }
     
     
-    public String getCofre(){
-        return "Capacidad del barco: "+Cofre+" libras";
+    public String getCofreCapacidad(){
+        return cofre.getCapacidad();
     }
+     
     
-    public String getComida(){
+    public String getRaciones(){
         return "Cantidad de raciones: "+raciones;
     }
     

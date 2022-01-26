@@ -6,6 +6,7 @@
 package piratas;
 import static java.lang.Thread.sleep;
 import java.util.Random;
+import java.util.Scanner;
 /**
  *
  * @author DELL
@@ -20,8 +21,8 @@ public class Viaje {
         Barco Holandesa = new Barco(20,30,20);
         System.out.println("Iniciando el viaje");
         Mapa mapa = new Mapa(4);
-        mapa.CrearIslaEntrada();
         Random random = new Random();
+        Scanner sc = new Scanner(System.in);
         while (true){
            System.out.println("Navegando.....");
            int numero_isla = random.nextInt(3)+1;
@@ -30,6 +31,14 @@ public class Viaje {
            System.out.println(mapa.getIsla(numero_isla));
            mapa.MostrarIslaEntrada(numero_isla);
            Holandesa.eventoTripulante();
+           mapa.isla[numero_isla].getTesorosIsla();
+           if (mapa.isla[numero_isla].cofre.getValor_total() != 0){           
+               System.out.println(" Deseas obtener el tesoro? (y/n)");
+               char opcion = sc.next().charAt(0);
+               if (opcion == 'y')
+                   Holandesa.cofre.AgregarTesoro(mapa.isla[numero_isla].TomarTesoros());
+           }
+           System.out.println(Holandesa.getCofreCapacidad());
            System.out.println("Resumen.....");
            System.out.println(Holandesa.getTripulacion());
            sleep(5000);
