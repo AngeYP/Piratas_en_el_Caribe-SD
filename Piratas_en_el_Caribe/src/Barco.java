@@ -5,6 +5,7 @@
  */
 package piratas;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -17,7 +18,7 @@ public class Barco {
     public Tripulante tripulacion [];
     public int raciones;
     public int municion;
-    
+    public ArrayList<Direccion> direServidores = new ArrayList();    
     
     public Barco(int tripulacion, int raciones, int municion){
         this.cofre= new Cofre(50);
@@ -63,7 +64,7 @@ public class Barco {
     }
     
     
-    public String getTripulacion(){
+    public String getTripulacionEstado(){
         int tripulantes_vivo = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Deseas ver el estado de tu tripulacion? (y/n)");
@@ -80,7 +81,11 @@ public class Barco {
         return respuesta;
     }
 
+    public String  getTripulacion() {
+        return "Tienes "+tripulacion.length+" tripulantes";
+    }
 
+    
     public void setRaciones(int raciones) {
         this.raciones = raciones;
     }
@@ -101,5 +106,13 @@ public class Barco {
     
     public String getMunicion(){
         return "Cantidad de municion: "+municion;
+    }
+    
+    public ArrayList<Direccion> getDireServidores() {
+        return direServidores;
+    }
+
+    public void setDireServidores(ArrayList<Direccion> direServidores) {
+        this.direServidores = direServidores;
     }
 }

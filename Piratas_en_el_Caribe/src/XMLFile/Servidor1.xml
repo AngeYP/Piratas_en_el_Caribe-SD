@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maquina>
+  <ubicacion id="Isla Nueva Esperanzas">
+    <puerto puerto="Puerto Real">
+      <mapas>100</mapas>
+      <barras_de_oro>200</barras_de_oro>
+      <barras_de_plata>300</barras_de_plata>
+      <bolsas_de_perlas>400</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>500</bolsas_moneda_de_oro>
+      <cofres_de_joyas>600</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>700</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>800</el_corazon_de_la_princesa>
+    </puerto>
+    <puerto puerto="Cala de los Mártires">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+    <puerto puerto="Playa de las perlas">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+  <ubicacion id="Cayo del buen viento">
+    <puerto puerto="">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+  <ubicacion id="Cayo de sotavento">
+    <puerto puerto="">
+      <mapas>100</mapas>
+      <barras_de_oro>100</barras_de_oro>
+      <barras_de_plata>100</barras_de_plata>
+      <bolsas_de_perlas>100</bolsas_de_perlas>
+      <bolsas_moneda_de_oro>100</bolsas_moneda_de_oro>
+      <cofres_de_joyas>100</cofres_de_joyas>
+      <cofres_de_piedras_preciosas>100</cofres_de_piedras_preciosas>
+      <el_corazon_de_la_princesa>100</el_corazon_de_la_princesa>
+    </puerto>
+  </ubicacion>
+</maquina>
