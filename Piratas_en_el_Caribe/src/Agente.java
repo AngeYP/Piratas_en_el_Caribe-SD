@@ -3,13 +3,14 @@ import java.util.*;
 import java.rmi.*;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
+import piratas.Barco;
 
 public class Agente implements InterfazAgente{
     int indiceNodo; //cuál es el siguiente ordenador a visitar
     String nombre;
     Vector listaNodos; //el itinerario
     int puertoRMI = 1022;
-    
+    Barco barco;
     public Agente(String miNombre, Vector laListaComputadoras, int elPuertoRMI) {
         nombre = miNombre;
         listaNodos = laListaComputadoras;

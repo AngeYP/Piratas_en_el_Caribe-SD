@@ -48,7 +48,7 @@ public class Cofre {
             valor_total = valor_total+tesoro.get(i).getValor();
         }
         if (valor_total != 0)
-            System.out.println("Valor total del cofre: "+valor_total);
+            System.out.println("Valor total del cofre: "+valor_total+"\n\n");
         else
             System.out.println("No posee tesoros");
     }
