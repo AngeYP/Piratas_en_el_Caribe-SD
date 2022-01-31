@@ -5,6 +5,7 @@
  */
 package Ahoy_Mateys;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -13,20 +14,31 @@ import java.util.Scanner;
  */
 public class Barco {
     
-    public int Cofre;
+    public Cofre cofre;
     public Tripulante tripulacion [];
     public int raciones;
     public int municion;
-    
+    public ArrayList<Direccion> direServidores = new ArrayList();    
     
     public Barco(int tripulacion, int raciones, int municion){
-        this.Cofre= 50;
+        this.cofre= new Cofre(50);
         this.raciones = raciones;
         this.municion = municion;
         this.tripulacion = new Tripulante[tripulacion];
         
         for(int i = 0; i < tripulacion; i++){
             this.tripulacion[i] = new Tripulante(i);
+        }
+    }
+
+    public void AtaqueATripulacion(int tripulantes_caidos) {
+        Random random = new Random();
+        while(tripulantes_caidos > 0){
+            int numero_tripulante  = random.nextInt(tripulacion.length);
+            if (tripulacion[numero_tripulante].getEstado() != "Muerto"){
+                tripulacion[numero_tripulante].setEstado("Muerto");
+                tripulantes_caidos --;
+            }                       
         }
     }
     
@@ -52,7 +64,7 @@ public class Barco {
     }
     
     
-    public String getTripulacion(){
+    public String getTripulacionEstado(){
         int tripulantes_vivo = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Deseas ver el estado de tu tripulacion? (y/n)");
@@ -69,10 +81,11 @@ public class Barco {
         return respuesta;
     }
 
-    public void setCofre(int Cofre) {
-        this.Cofre = Cofre;
+    public String  getTripulacion() {
+        return "Tienes "+tripulacion.length+" tripulantes";
     }
 
+    
     public void setRaciones(int raciones) {
         this.raciones = raciones;
     }
@@ -82,15 +95,24 @@ public class Barco {
     }
     
     
-    public String getCofre(){
-        return "Capacidad del barco: "+Cofre+" libras";
+    public String getCofreCapacidad(){
+        return cofre.getCapacidad();
     }
+     
     
-    public String getComida(){
+    public String getRaciones(){
         return "Cantidad de raciones: "+raciones;
     }
     
     public String getMunicion(){
         return "Cantidad de municion: "+municion;
+    }
+    
+    public ArrayList<Direccion> getDireServidores() {
+        return direServidores;
+    }
+
+    public void setDireServidores(ArrayList<Direccion> direServidores) {
+        this.direServidores = direServidores;
     }
 }
