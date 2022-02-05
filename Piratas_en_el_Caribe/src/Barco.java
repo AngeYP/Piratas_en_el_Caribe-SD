@@ -8,17 +8,19 @@ package piratas;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.Serializable;
 /**
  *
  * @author DELL
  */
-public class Barco {
+public class Barco implements Serializable{
     
     public Cofre cofre;
     public Tripulante tripulacion [];
     public int raciones;
     public int municion;
     public ArrayList<Direccion> direServidores = new ArrayList();    
+
     
     public Barco(int tripulacion, int raciones, int municion){
         this.cofre= new Cofre(50);
@@ -98,7 +100,11 @@ public class Barco {
     public String getCofreCapacidad(){
         return cofre.getCapacidad();
     }
-     
+    
+    public void mostrarCofre(){
+        cofre.getTesoros();
+    }
+    
     
     public String getRaciones(){
         return "Cantidad de raciones: "+raciones;

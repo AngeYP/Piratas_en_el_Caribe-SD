@@ -41,7 +41,7 @@ public class Viaje {
                System.out.println(" Deseas obtener el tesoro? (y/n)");
                char opcion = sc.next().charAt(0);
                if (opcion == 'y')
-                   Holandesa.cofre.AgregarTesoro(mapa.isla.get(numero_isla).TomarTesoros());
+                   Holandesa.cofre.AgregarTesoro(mapa.isla.get(numero_isla).TomarTesoros(0));
            }
            mapa.calamidad.Aparicion(Holandesa);
            System.out.println("Resumen.....");

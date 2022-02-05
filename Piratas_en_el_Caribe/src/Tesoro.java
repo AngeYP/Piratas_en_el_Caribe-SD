@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package piratas;
-
+import java.io.Serializable;
 /**
  *
  * @author DELL
  */
-public class Tesoro {
+public class Tesoro implements Serializable{
     
     public String nombre;
     public int peso;

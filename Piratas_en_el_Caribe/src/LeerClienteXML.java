@@ -10,8 +10,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class LeerClienteXML {
+  
+
+  
   public static void main(String[] args) {
-    
+    int raciones;
+    int municion;
+    int tripulacion;
     Equipamento equipo = new Equipamento();
     String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Cliente.xml";
     
@@ -26,9 +31,13 @@ public class LeerClienteXML {
       NodeList programas = documentXML.getElementsByTagName("Barco");
       Node programa = programas.item(0);
       Element element = (Element) programa;
-      Barco barco =  new Barco (Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent()),
-                                Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent()),
-                                Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));
+      
+      tripulacion = Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent());
+      raciones = Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent());
+      municion = Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent());
+      
+      Barco barco =  new Barco (tripulacion,raciones,municion);
+   
 //      equipo.setCofre(Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent()));
 //      equipo.setMuniciones(Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));
 //      equipo.setRaciones(Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent()));

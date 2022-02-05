@@ -57,8 +57,9 @@ public class LeerServidorXML {
       System.out.println("Error: " + e.getMessage());
     }
 //    mapa.getIslas();
-    mapa.getIslaPuerto();
-      //mapa.mostrarTesoroIsla_Puerto();
+//    mapa.getIslaPuerto();
+     mapa.mostrarTesoroIsla_Puerto();
+      //listUbicaciones.get(0).getIslaPuerto();
   }
 }
 
