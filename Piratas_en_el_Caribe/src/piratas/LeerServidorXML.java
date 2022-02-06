@@ -14,7 +14,7 @@ public class LeerServidorXML {
     
 //    ArrayList<Ubicacion> listUbicaciones = new ArrayList();
     ArrayList<Mapa> listUbicaciones = new ArrayList();
-    String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Servidor1.xml";
+    String server = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Servidor1.xml";
     Mapa mapa = new Mapa();
     try {
       File archivoxml = new File(server);

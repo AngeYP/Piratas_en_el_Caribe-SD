@@ -19,7 +19,7 @@ import java.io.Serializable;
  */
 public class ClienteXML implements Serializable {
     
-    String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Cliente.xml";
+    String server = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Cliente.xml";
     public int raciones;
     public int municion;
     public int tripulacion;
