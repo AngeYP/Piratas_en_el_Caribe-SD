@@ -36,7 +36,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         contador = 0;
         num_isla--;
         System.out.println(mapa.getIsla(num_isla));
-        System.out.println("Buscando puertos....." + num_isla);
+        System.out.println("Buscando puertos....." );
         mapa.isla.get(num_isla).mostrar_puerto();
         int num_puerto = 0;
         if (contador > 0){
@@ -58,12 +58,12 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
             mapa.isla.get(num_isla).getTesorosIsla();  
         }
         
-        System.out.println("Deseas tomar algun tesoro? (y/n) "+num_puerto);
+        System.out.println("Deseas tomar algun tesoro? (y/n) ");
         char opcion = sc.next().charAt(0);
         if (num_puerto > 0){
             while(opcion == 'y'){
                 int num_tesoro;
-                System.out.println("Escoge un tesoro "+contador);
+                System.out.println("Escoge un tesoro ");
                 num_tesoro = sc.nextInt();
                 if (num_tesoro >= 1 && num_tesoro <=contador){
 
@@ -82,7 +82,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         else{
             while(opcion == 'y'){
                 int num_tesoro;
-                System.out.println("Escoge un tesoro 2");
+                System.out.println("Escoge un tesoro ");
                 num_tesoro = sc.nextInt();
                 if (num_tesoro >= 1 && num_tesoro <=contador){
                     h.barco.cofre.AgregarTesoro
@@ -113,8 +113,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br= new BufferedReader(is);
         String s;
-        String miNombre = "servidor1";
-        
+        String miNombre = "servidor1";       
         ServidorXML servidor = new ServidorXML();
         if (miNombre.equals("servidor1")){
             mapa = servidor.listUbicaciones.get(0);
@@ -130,8 +129,6 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
             System.out.println("*******************************");
             System.out.println();
             System.out.println();
-//            System.out.println("Datos del mapa");
-//            mapa.getIslaPuerto();
         }//fintry
         catch(RemoteException re){
             System.out.println("Excepción en el main del Servidor:" + re);

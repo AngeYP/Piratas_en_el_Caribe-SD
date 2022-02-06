@@ -50,29 +50,32 @@ public class ClienteXML implements Serializable {
     //      equipo.setTripulacion(Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent()));
 
 
-//          NodeList direcciones = documentXML.getElementsByTagName("Servidor");
-//          for (int i = 0; i< direcciones.getLength(); i++) {
-//            Direccion direccion = new Direccion();
-//            Node dire = direcciones.item(i);
-//            if (dire.getNodeType() == Node.ELEMENT_NODE) {
-//              Element elemento = (Element) dire;
+          NodeList direcciones = documentXML.getElementsByTagName("Servidor");
+          for (int i = 0; i< direcciones.getLength(); i++) {
+            Direccion direccion = new Direccion();
+            Node dire = direcciones.item(i);
+            if (dire.getNodeType() == Node.ELEMENT_NODE) {
+              Element elemento = (Element) dire;
 //                System.out.println("0. "+elemento.getAttribute("id"));
 //                System.out.println("1. "+elemento.getElementsByTagName("Isla").item(0).getTextContent());
 //                System.out.println("2. "+elemento.getElementsByTagName("Puerto").item(0).getTextContent());
 //                System.out.println("-> "+barco.getCofreCapacidad());
 //                System.out.println("-> "+barco.getMunicion());
 //                System.out.println("-> "+barco.getRaciones());
-//                System.out.println("-> "+barco.getTripulacion());       
-//              direccion.setNum(Integer.parseInt(elemento.getAttribute("id")));
-//              direccion.setIsla(elemento.getElementsByTagName("Isla").item(0).getTextContent());
-//              direccion.setPuerto(elemento.getElementsByTagName("Puerto").item(0).getTextContent());
+//                System.out.println("-> "+barco.getTripulacion()); 
+              direccion.setNum(Integer.parseInt(elemento.getAttribute("id")));
+              direccion.setIsla(elemento.getElementsByTagName("Isla").item(0).getTextContent());
+              direccion.setPuerto(elemento.getElementsByTagName("Puerto").item(0).getTextContent());
 //
-//            }
-//            barco.direServidores.add(direccion);
-//          }
-        } catch (Exception e) {
+            }
+            barco.direServidores.add(direccion);
+         }
+        }
+         catch (Exception e) {
           System.out.println("Error: " + e.getMessage());
         }
     }
     
 }
+
+     

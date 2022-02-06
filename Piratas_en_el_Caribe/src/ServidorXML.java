@@ -40,11 +40,11 @@ public class ServidorXML {
               for (int j = 0; j< programas.getLength(); j++) {
         //        Ubicacion ubicacion = new Ubicacion();
                 Node programa = programas.item(j);
-
                 if (programa.getNodeType() == Node.ELEMENT_NODE) {
                   Element element = (Element) programa;
                   if (!islaflag.equals(element.getParentNode().getParentNode().getAttributes().getNamedItem("id").getTextContent()) 
-                      || !puertoflag.equals(element.getParentNode().getAttributes().getNamedItem("puerto").getTextContent())) {
+                      || 
+                      !puertoflag.equals(element.getParentNode().getAttributes().getNamedItem("puerto").getTextContent())) {
                     //System.out.println("\n\nNUEVA UBICACION");
                     //System.out.println("Isla: "+element.getParentNode().getParentNode().getAttributes().getNamedItem("id").getTextContent());
                     //System.out.println("Puerto: "+element.getParentNode().getAttributes().getNamedItem("puerto").getTextContent());
