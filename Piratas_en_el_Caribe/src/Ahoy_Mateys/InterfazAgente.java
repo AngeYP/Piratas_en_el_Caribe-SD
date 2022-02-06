@@ -1,5 +1,5 @@
 
-package piratas;
+package Ahoy_Mateys;
 
 import java.io.Serializable;
 

@@ -1,6 +1,9 @@
 
-package piratas;
+package Ahoy_Mateys;
 
+import Ahoy_Mateys.ServidorXML;
+import Ahoy_Mateys.Agente;
+import Ahoy_Mateys.Mapa;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.Registry;
