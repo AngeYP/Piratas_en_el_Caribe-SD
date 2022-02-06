@@ -57,7 +57,11 @@ public class Isla {
         if (puerto.size() > 0){
             for(int i = 0; i < puerto.size(); i++){
                 System.out.println((i+1)+". "+puerto.get(i).getNombre());
+                Servidor.contador ++;
             }   
+        }
+        else{
+            System.out.println("No hay puertos");
         }
     }
     
@@ -98,7 +102,11 @@ public class Isla {
         
     }
     
-    public Tesoro TomarTesoros(){
-        return cofre.EliminarTesoro();
+    public void getTesoroIslaPuerto(int i){
+        puerto.get(i).obtenerTesoroPuerto();
+    }
+    
+    public Tesoro TomarTesoros(int opcion){
+        return cofre.EliminarTesoro(opcion);
     }
 }

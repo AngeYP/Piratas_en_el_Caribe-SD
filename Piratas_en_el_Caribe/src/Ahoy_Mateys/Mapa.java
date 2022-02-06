@@ -51,8 +51,10 @@ public class Mapa {
     
     public void getIslas(){
         for(int i = 0; i <isla.size();i++){
-            System.out.println("Isla: "+isla.get(i).getNombre());
+            System.out.println((i+1)+" Isla: "+isla.get(i).getNombre());
+            Servidor.contador ++;
         }
+        
     }
     
     public void getIslaPuerto(){

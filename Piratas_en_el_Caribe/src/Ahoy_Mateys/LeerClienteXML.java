@@ -1,4 +1,4 @@
-package Ahoy_Mateys;
+package piratas;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -10,10 +10,15 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class LeerClienteXML {
+  
+
+  
   public static void main(String[] args) {
-    
+    int raciones;
+    int municion;
+    int tripulacion;
     Equipamento equipo = new Equipamento();
-    String server = "C:\\Users\\angel\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\XMLFile\\Cliente.xml";
+    String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Cliente.xml";
     
     try {
       File archivoxml = new File(server);
@@ -26,10 +31,17 @@ public class LeerClienteXML {
       NodeList programas = documentXML.getElementsByTagName("Barco");
       Node programa = programas.item(0);
       Element element = (Element) programa;
-      equipo.setCofre(Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent()));
-      equipo.setMuniciones(Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));
-      equipo.setRaciones(Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent()));
-      equipo.setTripulacion(Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent()));
+      
+      tripulacion = Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent());
+      raciones = Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent());
+      municion = Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent());
+      
+      Barco barco =  new Barco (tripulacion,raciones,municion);
+   
+//      equipo.setCofre(Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent()));
+//      equipo.setMuniciones(Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));
+//      equipo.setRaciones(Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent()));
+//      equipo.setTripulacion(Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent()));
 
       
       NodeList direcciones = documentXML.getElementsByTagName("Servidor");
@@ -38,11 +50,19 @@ public class LeerClienteXML {
         Node dire = direcciones.item(i);
         if (dire.getNodeType() == Node.ELEMENT_NODE) {
           Element elemento = (Element) dire;
+            System.out.println("0. "+elemento.getAttribute("id"));
+            System.out.println("1. "+elemento.getElementsByTagName("Isla").item(0).getTextContent());
+            System.out.println("2. "+elemento.getElementsByTagName("Puerto").item(0).getTextContent());
+            System.out.println("-> "+barco.getCofreCapacidad());
+            System.out.println("-> "+barco.getMunicion());
+            System.out.println("-> "+barco.getRaciones());
+            System.out.println("-> "+barco.getTripulacion());       
           direccion.setNum(Integer.parseInt(elemento.getAttribute("id")));
           direccion.setIsla(elemento.getElementsByTagName("Isla").item(0).getTextContent());
           direccion.setPuerto(elemento.getElementsByTagName("Puerto").item(0).getTextContent());
+          
         }
-        equipo.direServidores.add(direccion);
+        barco.direServidores.add(direccion);
       }
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());

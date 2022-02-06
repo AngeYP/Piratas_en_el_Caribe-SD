@@ -8,12 +8,12 @@ package Ahoy_Mateys;
 import Ahoy_Mateys.Tesoro;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.io.Serializable;
 /**
  *
  * @author DELL
  */
-public class Cofre {
+public class Cofre implements Serializable{
     
     public int capacidad ;
     public ArrayList<Tesoro> tesoro ;
@@ -47,6 +47,7 @@ public class Cofre {
                                 " Peso: " + tesoro.get(i).getPeso()+
                                 " Valor: "+ tesoro.get(i).getValor());
             valor_total = valor_total+tesoro.get(i).getValor();
+            Servidor.contador ++;
         }
         if (valor_total != 0)
             System.out.println("Valor total del cofre: "+valor_total+"\n\n");
@@ -58,11 +59,11 @@ public class Cofre {
         tesoro.add(treasure);
     }
     
-    public Tesoro EliminarTesoro(){
-        System.out.println(" Que tesoro deseas sacar?");
-        this.getTesoros();
-        Scanner sc = new Scanner(System.in);
-        int opcion = sc.nextInt();
+    public Tesoro EliminarTesoro(int opcion){
+        //System.out.println(" Que tesoro deseas sacar?");
+        //this.getTesoros();
+//        Scanner sc = new Scanner(System.in);
+//        int opcion = sc.nextInt();
         Tesoro treasure;
         treasure = tesoro.get(opcion-1);
         tesoro.remove(opcion-1);

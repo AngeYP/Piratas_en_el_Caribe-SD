@@ -34,7 +34,7 @@ public class Puerto {
         cofre.getTesoros();
     }
     
-    public Tesoro TomarTesoros(){
-        return cofre.EliminarTesoro();
+    public Tesoro TomarTesoros(int opcion){
+        return cofre.EliminarTesoro(opcion);
     }
 }
