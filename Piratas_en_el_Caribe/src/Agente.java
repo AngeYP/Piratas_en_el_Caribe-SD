@@ -22,7 +22,7 @@ public class Agente implements InterfazAgente{
         listaNodos = laListaComputadoras;
         indiceNodo = 0;
         puertoRMI = elPuertoRMI;
-        barco = new Barco (cliente.tripulacion,cliente.raciones,cliente.municion);
+        barco = new Barco (cliente.cofre,cliente.tripulacion,cliente.raciones,cliente.municion);
     }
 
     public String getNombre() {

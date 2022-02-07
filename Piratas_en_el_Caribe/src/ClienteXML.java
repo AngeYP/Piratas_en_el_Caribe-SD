@@ -23,7 +23,7 @@ public class ClienteXML implements Serializable {
     public int raciones;
     public int municion;
     public int tripulacion;
-    
+    public int cofre;
     
     public ClienteXML(){
         try {
@@ -41,8 +41,8 @@ public class ClienteXML implements Serializable {
           tripulacion = Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent());
           raciones = Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent());
           municion = Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent());
-
-          Barco barco =  new Barco (tripulacion,raciones,municion);
+          cofre = Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent());
+          Barco barco =  new Barco (cofre,tripulacion,raciones,municion);
 
     //      equipo.setCofre(Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent()));
     //      equipo.setMuniciones(Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));

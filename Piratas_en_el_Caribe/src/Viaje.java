@@ -18,7 +18,7 @@ public class Viaje {
      */
     public static void main(String[] args) throws InterruptedException {
         // TODO code application logic here
-        Barco Holandesa = new Barco(20,30,20);
+        Barco Holandesa = new Barco(100,20,30,20);
         System.out.println("Iniciando el viaje");
         Mapa mapa = new Mapa();
         Random random = new Random();

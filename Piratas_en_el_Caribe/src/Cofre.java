@@ -32,7 +32,7 @@ public class Cofre implements Serializable{
                                 " Valor: "+ tesoro.get(i).getValor());
             ocupado = ocupado + tesoro.get(i).getPeso();
         }
-        return "Queda: " + (capacidad - ocupado) + " de espacio";
+        return "Queda: " + (capacidad) + " de espacio";
     }
 
     public int getValor_total() {

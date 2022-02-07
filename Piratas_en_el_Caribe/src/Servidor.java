@@ -9,6 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class Servidor extends UnicastRemoteObject implements InterfazServidor{
@@ -53,6 +54,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         }
         else
         {
+            num_puerto --;
             System.out.println("Tesoros encontrados: ");
             contador = 0;
             mapa.isla.get(num_isla).getTesorosIsla();  
@@ -60,23 +62,34 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         
         System.out.println("Deseas tomar algun tesoro? (y/n) ");
         char opcion = sc.next().charAt(0);
-        if (num_puerto > 0){
+        if (num_puerto >= 0){
             while(opcion == 'y'){
                 int num_tesoro;
                 System.out.println("Escoge un tesoro ");
                 num_tesoro = sc.nextInt();
-                if (num_tesoro >= 1 && num_tesoro <=contador){
-
+                if (num_tesoro >= 1 && num_tesoro <=contador 
+                        && h.barco.ComprobarCapacidad() >= mapa.isla.get(num_isla).puerto.get(num_puerto).cofre.tesoro.get(num_tesoro-1).peso){
+//                      mapa.isla.get(num_isla).puerto.get(num_puerto).obtenerTesoroPuerto();
+                    h.barco.setCofreCapacidad(mapa.isla.get(num_isla).puerto.get(num_puerto).cofre.tesoro.get(num_tesoro-1).peso);
                     h.barco.cofre.AgregarTesoro
                                   (mapa.isla.get(num_isla).puerto.get(num_puerto).TomarTesoros(num_tesoro));
+                    
                     System.out.println("Deseas tomar otro tesoro? (y/n)");
                     char option = sc.next().charAt(0);
                     if (option == 'n')
                         break;
                     System.out.println();
                     contador = 0;
+                    System.out.println("Tesoro obtenidos del barco");
+                    System.out.println(h.barco.getCofreCapacidad());
+                    System.out.println();
                     mapa.isla.get(num_isla).getTesoroIslaPuerto(num_puerto);
-                }    
+                    
+                }
+                else{
+                    System.out.println("Cofre lleno..... dejando isla");
+                    break;
+                }
             }
         }
         else{
@@ -84,7 +97,9 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
                 int num_tesoro;
                 System.out.println("Escoge un tesoro ");
                 num_tesoro = sc.nextInt();
-                if (num_tesoro >= 1 && num_tesoro <=contador){
+                if (num_tesoro >= 1 && num_tesoro <=contador && 
+                        h.barco.ComprobarCapacidad() >= mapa.isla.get(num_isla).cofre.tesoro.get(num_tesoro-1).peso){
+                     h.barco.setCofreCapacidad(mapa.isla.get(num_isla).cofre.tesoro.get(num_tesoro-1).peso);
                     h.barco.cofre.AgregarTesoro
                                   (mapa.isla.get(num_isla).TomarTesoros(num_tesoro));
                     System.out.println("Deseas tomar otro tesoro? (y/n)");
@@ -93,7 +108,15 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
                         break;
                     System.out.println();
                     contador = 0;
+                    System.out.println("Tesoro obtenidos del barco");
+                    System.out.println(h.barco.getCofreCapacidad());
+                    System.out.println();
                     mapa.isla.get(num_isla).getTesorosIsla(); 
+                    
+                }
+                else{
+                    System.out.println("Cofre lleno..... dejando isla");
+                    break;
                 }
             }
         }
@@ -113,10 +136,21 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br= new BufferedReader(is);
         String s;
-        String miNombre = "servidor1";       
+        String miNombre;    
+        miNombre = JOptionPane.showInputDialog("Ingrese el nombre del servidor\nservidor1\nservidor2\nservidor3");
         ServidorXML servidor = new ServidorXML();
-        if (miNombre.equals("servidor1")){
-            mapa = servidor.listUbicaciones.get(0);
+        switch (miNombre) {
+            case "servidor1":
+                mapa = servidor.listUbicaciones.get(0);
+                break;
+            case "servidor2":
+                mapa = servidor.listUbicaciones.get(1);
+                break;
+            case "servidor3":
+                mapa = servidor.listUbicaciones.get(2);
+                break;
+            default:
+                break;
         }
         //Nota:Los servidores se espera que se arranquen con los
         //argumentos 1, 2 y 3 de la linea de mandatos respectivamente,

@@ -17,6 +17,7 @@ public class LeerClienteXML {
     int raciones;
     int municion;
     int tripulacion;
+    int cofre;
     Equipamento equipo = new Equipamento();
     String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Cliente.xml";
     
@@ -35,8 +36,8 @@ public class LeerClienteXML {
       tripulacion = Integer.parseInt(element.getElementsByTagName("Tripulacion").item(0).getTextContent());
       raciones = Integer.parseInt(element.getElementsByTagName("Raciones").item(0).getTextContent());
       municion = Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent());
-      
-      Barco barco =  new Barco (tripulacion,raciones,municion);
+      cofre = Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent());
+      Barco barco =  new Barco (cofre,tripulacion,raciones,municion);
    
 //      equipo.setCofre(Integer.parseInt(element.getElementsByTagName("Cofre").item(0).getTextContent()));
 //      equipo.setMuniciones(Integer.parseInt(element.getElementsByTagName("Municiones").item(0).getTextContent()));

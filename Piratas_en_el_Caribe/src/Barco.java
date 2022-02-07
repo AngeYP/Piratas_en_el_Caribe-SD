@@ -22,8 +22,8 @@ public class Barco implements Serializable{
     public ArrayList<Direccion> direServidores = new ArrayList();    
 
     
-    public Barco(int tripulacion, int raciones, int municion){
-        this.cofre= new Cofre(50);
+    public Barco(int cofre,int tripulacion, int raciones, int municion){
+        this.cofre= new Cofre(cofre);
         this.raciones = raciones;
         this.municion = municion;
         this.tripulacion = new Tripulante[tripulacion];
@@ -32,7 +32,12 @@ public class Barco implements Serializable{
             this.tripulacion[i] = new Tripulante(i);
         }
     }
+    
+    
+    public void setCofreCapacidad(int tesoro_peso){
+        cofre.capacidad = cofre.capacidad - tesoro_peso;
 
+    }
     public void AtaqueATripulacion(int tripulantes_caidos) {
         Random random = new Random();
         while(tripulantes_caidos > 0){
@@ -96,6 +101,10 @@ public class Barco implements Serializable{
         this.municion = municion;
     }
     
+    
+    public int ComprobarCapacidad(){
+        return cofre.capacidad;
+    }
     
     public String getCofreCapacidad(){
         return cofre.getCapacidad();
