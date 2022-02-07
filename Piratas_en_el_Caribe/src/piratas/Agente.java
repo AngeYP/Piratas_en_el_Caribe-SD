@@ -70,7 +70,7 @@ public class Agente implements InterfazAgente {
             }//finif    
             else { //si se han hecho todas las paradas
                 dormir(5);//pausa para poder visualizarlo
-                System.out.println("El Agente 007 ha regresado a casa");
+                System.out.println("La tripulacion de los Mugiwara ha regresado a casa");
                 dormir(5);//pausa para poder visualizarlo
                 break;
             }

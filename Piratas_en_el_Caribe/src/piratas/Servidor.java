@@ -104,7 +104,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
     
     public void recibe(Agente h) throws RemoteException{
         dormir(3);//pausa para poder visualizarlo
-        System.out.println("*****el Agente " + h.getNombre() + " ha llegado." );
+        System.out.println("*****La " + h.getNombre() + " ha llegado.*****" );
         viaje(h);
         //mapa.mostrarTesoroIsla_Puerto();
         h.ejecuta();
@@ -144,7 +144,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
             Registry registro = LocateRegistry.createRegistry(puertoRMI);
             registro.rebind( miNombre, h);
             System.out.println("*******************************");
-            System.out.println("Agente "+miNombre+" listo.");
+            System.out.println("Region "+miNombre+" listo.");
             System.out.println("*******************************");
             System.out.println();
             System.out.println();
