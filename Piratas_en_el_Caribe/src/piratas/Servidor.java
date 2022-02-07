@@ -9,6 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.net.*;
 import java.io.*;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class Servidor extends UnicastRemoteObject implements InterfazServidor{
@@ -53,6 +54,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         }
         else
         {
+            num_puerto--;
             System.out.println("Tesoros encontrados: ");
             contador = 0;
             mapa.isla.get(num_isla).getTesorosIsla();  
@@ -60,7 +62,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         
         System.out.println("Deseas tomar algun tesoro? (y/n) ");
         char opcion = sc.next().charAt(0);
-        if (num_puerto > 0){
+        if (num_puerto >= 0){
             while(opcion == 'y'){
                 int num_tesoro;
                 System.out.println("Escoge un tesoro ");
@@ -113,10 +115,27 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br= new BufferedReader(is);
         String s;
-        String miNombre = "servidor1";       
-        ServidorXML servidor = new ServidorXML();
-        if (miNombre.equals("servidor1")){
-            mapa = servidor.listUbicaciones.get(0);
+        String miNombre;  
+        miNombre = JOptionPane.showInputDialog("Ingrese el nombre del servidor\nservidor1\nservidor2\nservidor3");
+        ServidorXML servidor = null;
+        switch (miNombre) {
+            case "servidor1":
+                servidor = new ServidorXML(1);
+                mapa = servidor.listUbicaciones.get(0);
+                puertoRMI = 1022;                
+                break;
+            case "servidor2":
+                servidor = new ServidorXML(2);
+                mapa = servidor.listUbicaciones.get(0);
+                puertoRMI = 1023;                
+                break;
+            case "servidor3":
+                servidor = new ServidorXML(3);
+                mapa = servidor.listUbicaciones.get(0);
+                puertoRMI = 1024;                
+                break;
+            default:
+                break;
         }
         //Nota:Los servidores se espera que se arranquen con los
         //argumentos 1, 2 y 3 de la linea de mandatos respectivamente,

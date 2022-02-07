@@ -22,12 +22,26 @@ public class ServidorXML {
     
     
     public ArrayList<Mapa> listUbicaciones = new ArrayList();
-    String server = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Servidor1.xml";
+    String server1 = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Servidor1.xml";
+    String server2 = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Servidor2.xml";
+    String server3 = "C:\\Users\\Gustavo\\Documents\\GitHub\\Piratas_en_el_Caribe-SD\\Piratas_en_el_Caribe\\src\\piratas\\XMLFile\\Servidor3.xml";
     
-    public ServidorXML(){
+    public ServidorXML(int numServer){
         Mapa mapa = new Mapa();
         try {
-              File archivoxml = new File(server);
+                File archivoxml = null;
+              switch(numServer){
+                  case 1:
+                      archivoxml = new File(server1);
+                      break;
+                  case 2:
+                      archivoxml = new File(server2);
+                      break;
+                  case 3:
+                      archivoxml = new File(server3);
+                      break;
+              }
+              
               DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
               DocumentBuilder builder = dbFactory.newDocumentBuilder();
               Document documentXML = builder.parse(archivoxml);

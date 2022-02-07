@@ -20,8 +20,8 @@ public class Cliente {
             System.out.println("***Buenviaje, " + " agent 007.");
             Vector listaNodos = new Vector();
             listaNodos.addElement("servidor1");
-//            listaNodos.addElement("servidor2");
-//            listaNodos.addElement("servidor3");
+            listaNodos.addElement("servidor2");
+            listaNodos.addElement("servidor3");
             Agente a = new Agente("007",listaNodos,puertoRMI);
             h.recibe(a);
             //System.out.println(a.barco.getTripulacion());
