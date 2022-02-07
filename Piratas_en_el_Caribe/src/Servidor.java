@@ -16,6 +16,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
     static int puertoRMI = 1022;
     static int contador = 0;
     static Mapa mapa = new Mapa();
+    static String miNombre;
     public Servidor() throws RemoteException{
         super();
 
@@ -136,7 +137,7 @@ public class Servidor extends UnicastRemoteObject implements InterfazServidor{
         InputStreamReader is = new InputStreamReader(System.in);
         BufferedReader br= new BufferedReader(is);
         String s;
-        String miNombre;    
+//        String miNombre;    
         miNombre = JOptionPane.showInputDialog("Ingrese el nombre del servidor\nservidor1\nservidor2\nservidor3");
         ServidorXML servidor = new ServidorXML();
         switch (miNombre) {

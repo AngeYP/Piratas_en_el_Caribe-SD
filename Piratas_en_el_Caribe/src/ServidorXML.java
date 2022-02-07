@@ -22,7 +22,7 @@ public class ServidorXML {
     
     
     public ArrayList<Mapa> listUbicaciones = new ArrayList();
-    String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\Servidor1.xml";
+    String server = "C:\\Users\\sigra\\Documents\\NetBeansProjects\\Piratas\\src\\piratas\\XMLFile\\"+Servidor.miNombre+".XML";
     
     public ServidorXML(){
         Mapa mapa = new Mapa();
